@@ -1,35 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f412280e-4ab6-4e7f-b9c6-daac82f90431" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Producto3.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/grupoTeamRocket/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/grupoTeamRocket/controlador/Controlador.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/grupoTeamRocket/dao/ArticuloDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/grupoTeamRocket/dao/ClienteEstandarDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/grupoTeamRocket/dao/ClientePremiumDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/grupoTeamRocket/dao/Conexion.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/grupoTeamRocket/dao/DAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/grupoTeamRocket/dao/PedidoDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/grupoTeamRocket/modelo/Articulo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/grupoTeamRocket/modelo/Cliente.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/grupoTeamRocket/modelo/ClienteEstandar.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/grupoTeamRocket/modelo/ClientePremium.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/grupoTeamRocket/modelo/Datos.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/grupoTeamRocket/modelo/Lista.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/grupoTeamRocket/modelo/ListaArticulos.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/grupoTeamRocket/modelo/ListaClientes.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/grupoTeamRocket/modelo/ListaPedidos.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/grupoTeamRocket/modelo/Pedido.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/grupoTeamRocket/vista/GestionOS.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/grupoTeamRocket/vista/OnlineStore.java" afterDir="false" />
-    </list>
+    <list default="true" id="f412280e-4ab6-4e7f-b9c6-daac82f90431" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -73,6 +45,18 @@
       <option name="presentableId" value="Default" />
       <updated>1669481953700</updated>
     </task>
+    <task id="LOCAL-00001" summary="Primer commit. Código del PRODUCTO 2 + conexión a bbdd + estructura básica de diseño DAO">
+      <created>1669482939006</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1669482939006</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Primer commit. Código del PRODUCTO 2 + conexión a bbdd + estructura básica de diseño DAO" />
+    <option name="LAST_COMMIT_MESSAGE" value="Primer commit. Código del PRODUCTO 2 + conexión a bbdd + estructura básica de diseño DAO" />
   </component>
 </project>
