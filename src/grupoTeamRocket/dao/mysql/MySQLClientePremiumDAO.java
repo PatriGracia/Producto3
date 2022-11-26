@@ -1,4 +1,4 @@
-package grupoTeamRocket.mysql;
+package grupoTeamRocket.dao.mysql;
 
 import grupoTeamRocket.dao.ClientePremiumDAO;
 import grupoTeamRocket.modelo.ClientePremium;

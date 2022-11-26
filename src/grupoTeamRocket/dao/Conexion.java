@@ -23,14 +23,7 @@ public class Conexion {
             Class.forName(driver);
             cx = DriverManager.getConnection(url, user, password);
             System.out.println("Se conecta");
-            /*ps = cx.prepareStatement("INSERT INTO cliente_premium VALUES (?, ?, ?, ?, ?);");
-            ps.setString(1, c.getEmail());
-            ps.setString(2, c.getNombre());
-            ps.setString(3, c.getNif());
-            ps.setString(4, c.getDomicilio());
-            ps.setFloat(5, c.getDescuento());
-            ps.execute();
-            System.out.println("Se añade"); */
+
         } catch (ClassNotFoundException | SQLException e) {
             System.out.println("No se conecta");
             throw new RuntimeException(e);

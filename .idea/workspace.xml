@@ -2,16 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f412280e-4ab6-4e7f-b9c6-daac82f90431" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/grupoTeamRocket/mysql/MySQLArticuloDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/grupoTeamRocket/mysql/MySQLClienteEstandarDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/grupoTeamRocket/mysql/MySQLClientePremiumDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/grupoTeamRocket/mysql/MySQLPedidoDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/grupoTeamRocket/dao/DAOException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/grupoTeamRocket/dao/ArticuloDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/grupoTeamRocket/dao/ArticuloDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/grupoTeamRocket/dao/ClienteEstandarDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/grupoTeamRocket/dao/ClienteEstandarDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/grupoTeamRocket/dao/ClientePremiumDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/grupoTeamRocket/dao/ClientePremiumDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Producto3.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Producto3.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/grupoTeamRocket/dao/Conexion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/grupoTeamRocket/dao/Conexion.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/grupoTeamRocket/dao/DAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/grupoTeamRocket/dao/DAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/grupoTeamRocket/dao/PedidoDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/grupoTeamRocket/dao/PedidoDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/grupoTeamRocket/mysql/MySQLArticuloDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/grupoTeamRocket/dao/mysql/MySQLArticuloDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/grupoTeamRocket/mysql/MySQLClienteEstandarDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/grupoTeamRocket/dao/mysql/MySQLClienteEstandarDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/grupoTeamRocket/mysql/MySQLClientePremiumDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/grupoTeamRocket/dao/mysql/MySQLClientePremiumDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/grupoTeamRocket/mysql/MySQLPedidoDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/grupoTeamRocket/dao/mysql/MySQLPedidoDAO.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,7 +43,11 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true"
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "last_opened_file_path": "C:/Users/34639/Desktop/PATRI/DAW/Acceso_a_bbdd/jdbc_mysql/mysql-connector-j-8.0.31/mysql-connector-j-8.0.31.jar",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2"
   }
 }]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -70,12 +73,20 @@
       <option name="project" value="LOCAL" />
       <updated>1669483300476</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Estructuta implementación mysql">
+      <created>1669485789915</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1669485789915</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Primer commit. Código del PRODUCTO 2 + conexión a bbdd + estructura básica de diseño DAO" />
     <MESSAGE value="Código del PRODUCTO 2 + conexión a bbdd + estructura básica de diseño DAO" />
-    <option name="LAST_COMMIT_MESSAGE" value="Código del PRODUCTO 2 + conexión a bbdd + estructura básica de diseño DAO" />
+    <MESSAGE value="Estructuta implementación mysql" />
+    <option name="LAST_COMMIT_MESSAGE" value="Estructuta implementación mysql" />
   </component>
 </project>
