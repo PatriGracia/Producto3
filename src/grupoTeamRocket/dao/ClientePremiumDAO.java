@@ -1,4 +1,7 @@
 package grupoTeamRocket.dao;
 
-public interface ClientePremiumDAO {
+import grupoTeamRocket.modelo.ClientePremium;
+
+public interface ClientePremiumDAO extends DAO<ClientePremium, Long>{
 }
+

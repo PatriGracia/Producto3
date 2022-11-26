@@ -1,4 +1,6 @@
 package grupoTeamRocket.dao;
 
-public interface PedidoDAO {
+import grupoTeamRocket.modelo.Pedido;
+
+public interface PedidoDAO extends DAO<Pedido, Long>{
 }

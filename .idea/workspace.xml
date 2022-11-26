@@ -2,8 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f412280e-4ab6-4e7f-b9c6-daac82f90431" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/grupoTeamRocket/mysql/MySQLArticuloDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/grupoTeamRocket/mysql/MySQLClienteEstandarDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/grupoTeamRocket/mysql/MySQLClientePremiumDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/grupoTeamRocket/mysql/MySQLPedidoDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/grupoTeamRocket/dao/Conexion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/grupoTeamRocket/dao/Conexion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/grupoTeamRocket/dao/ArticuloDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/grupoTeamRocket/dao/ArticuloDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/grupoTeamRocket/dao/ClienteEstandarDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/grupoTeamRocket/dao/ClienteEstandarDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/grupoTeamRocket/dao/ClientePremiumDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/grupoTeamRocket/dao/ClientePremiumDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/grupoTeamRocket/dao/DAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/grupoTeamRocket/dao/DAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/grupoTeamRocket/dao/PedidoDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/grupoTeamRocket/dao/PedidoDAO.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
