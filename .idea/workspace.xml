@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f412280e-4ab6-4e7f-b9c6-daac82f90431" name="Changes" comment="" />
+    <list default="true" id="f412280e-4ab6-4e7f-b9c6-daac82f90431" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/grupoTeamRocket/dao/Conexion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/grupoTeamRocket/dao/Conexion.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -52,11 +55,19 @@
       <option name="project" value="LOCAL" />
       <updated>1669482939006</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Código del PRODUCTO 2 + conexión a bbdd + estructura básica de diseño DAO">
+      <created>1669483300476</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1669483300476</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Primer commit. Código del PRODUCTO 2 + conexión a bbdd + estructura básica de diseño DAO" />
-    <option name="LAST_COMMIT_MESSAGE" value="Primer commit. Código del PRODUCTO 2 + conexión a bbdd + estructura básica de diseño DAO" />
+    <MESSAGE value="Código del PRODUCTO 2 + conexión a bbdd + estructura básica de diseño DAO" />
+    <option name="LAST_COMMIT_MESSAGE" value="Código del PRODUCTO 2 + conexión a bbdd + estructura básica de diseño DAO" />
   </component>
 </project>
