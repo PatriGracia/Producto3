@@ -10,8 +10,8 @@ import java.util.List;
 
 public class MySQLClienteEstandarDAO implements ClienteEstandarDAO {
 
-    final String INSERT = "INSERT INTO cliente_estandar (email, nombre, nif, domicilio) VALUES (?,?,?,?);";
-    final String GETALL = "SELECT email, nombre, nif, domicilio FROM cliente_estandar";
+    final String INSERT = "INSERT INTO cliente_estandar (fk_estandar_email, nombre, nif, domicilio) VALUES (?,?,?,?);";
+    final String GETALL = "SELECT fk_estandar_email, nombre, nif, domicilio FROM cliente_estandar";
     private Connection conn;
 
     public MySQLClienteEstandarDAO(Connection conn){
@@ -24,6 +24,7 @@ public class MySQLClienteEstandarDAO implements ClienteEstandarDAO {
 
     @Override
     public void insertar(ClienteEstandar a) throws DAOException {
+        conn = new MySQLDAOManager().conectar();
         PreparedStatement stat = null;
         try {
             stat = conn.prepareStatement(INSERT);
@@ -44,6 +45,11 @@ public class MySQLClienteEstandarDAO implements ClienteEstandarDAO {
                 }
             }
 
+        }try {
+            conn.close();
+            System.out.println("Se ha desconectado de la bbdd");
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
         }
     }
 
@@ -58,7 +64,7 @@ public class MySQLClienteEstandarDAO implements ClienteEstandarDAO {
     }
 
     private ClienteEstandar convertir (ResultSet rs) throws SQLException{
-        String email = rs.getString("email");
+        String email = rs.getString("fk_estandar_email");
         String nombre = rs.getString("nombre");
         String nif = rs.getString("nif");
         String domicilio = rs.getString("domicilio");
@@ -68,6 +74,7 @@ public class MySQLClienteEstandarDAO implements ClienteEstandarDAO {
     }
     @Override
     public List<ClienteEstandar> obtenerTodos() throws DAOException {
+        conn = new MySQLDAOManager().conectar();
         PreparedStatement stat = null;
         ResultSet rs = null;
         List<ClienteEstandar> clienteEstandars = new ArrayList<>();
@@ -94,6 +101,11 @@ public class MySQLClienteEstandarDAO implements ClienteEstandarDAO {
                     new DAOException("Error en SQL", ex);
                 }
             }
+        }try {
+            conn.close();
+            System.out.println("Se ha desconectado de la bbdd");
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
         }
         return clienteEstandars;
     }
@@ -103,7 +115,7 @@ public class MySQLClienteEstandarDAO implements ClienteEstandarDAO {
         return null;
     }
 
-    public static void main(String[] args) throws DAOException, SQLException {
+    /*public static void main(String[] args) throws DAOException, SQLException {
         Connection conn = null;
         final String driver = "com.mysql.cj.jdbc.Driver";
         try {
@@ -123,5 +135,5 @@ public class MySQLClienteEstandarDAO implements ClienteEstandarDAO {
                 conn.close();
             }
         }
-    }
+    }*/
 }

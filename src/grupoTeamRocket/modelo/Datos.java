@@ -75,27 +75,7 @@ public class Datos {
     }
 
     public void aniadirCliente(String nombre, String domicilio, String nif, String email, Float descuento) {
-        /*if (descuento != null) {
-            listaClientes.add(new ClientePremium(nombre, domicilio, nif, email, descuento));
-        } else {
-            listaClientes.add(new Cliente(nombre, domicilio, nif, email) {
-                @Override
-                public float calcAnual() {
-                    return 0;
-                }
 
-                @Override
-                public String tipoCliente() {
-                    return null;
-                }
-
-                @Override
-                public float descuentoEnv() {
-                    return 0;
-                }
-            });
-            listaClientes.add(new ClienteEstandar(nombre, domicilio, nif, email));
-        }*/
         try {
             DAOFactory.getDAOFactory().getClienteDAO().insertar(new Cliente(nombre, domicilio, nif, email) {
                 @Override
@@ -116,6 +96,16 @@ public class Datos {
         } catch (DAOException e) {
             throw new RuntimeException(e);
         }
+        if (descuento != null) {
+            listaClientes.add(new ClientePremium(nombre, domicilio, nif, email, descuento));
+        } else {
+            //listaClientes.add(new ClienteEstandar(nombre, domicilio, nif, email));
+            try {
+                DAOFactory.getDAOFactory().getClienteEstandarDAO().insertar(new ClienteEstandar(nombre, domicilio, nif, email));
+            } catch (DAOException e) {
+                throw new RuntimeException(e);
+            }
+        }
     }
 
     public ArrayList recorrerTodosClientes(){
@@ -134,10 +124,17 @@ public class Datos {
     }
     public ArrayList recorrerClienteE() {
         ArrayList<String> arrClienteEstandar = new ArrayList<>();
-        for (Cliente listaClientes1 : listaClientes.lista) {
+        /*for (Cliente listaClientes1 : listaClientes.lista) {
             if (listaClientes1 instanceof ClienteEstandar) {
                 arrClienteEstandar.add(listaClientes1.toString());
             }
+        }*/
+        try {
+            for(ClienteEstandar ce : DAOFactory.getDAOFactory().getClienteEstandarDAO().obtenerTodos()){
+                arrClienteEstandar.add(ce.toString());
+            }
+        } catch (DAOException e) {
+            throw new RuntimeException(e);
         }
         return arrClienteEstandar;
     }
