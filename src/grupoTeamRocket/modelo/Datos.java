@@ -97,7 +97,12 @@ public class Datos {
             throw new RuntimeException(e);
         }
         if (descuento != null) {
-            listaClientes.add(new ClientePremium(nombre, domicilio, nif, email, descuento));
+            //listaClientes.add(new ClientePremium(nombre, domicilio, nif, email, descuento));
+            try {
+                DAOFactory.getDAOFactory().getClientePremiumDAO().insertar(new ClientePremium(nombre, domicilio, nif, email, descuento));
+            } catch (DAOException e) {
+                throw new RuntimeException(e);
+            }
         } else {
             //listaClientes.add(new ClienteEstandar(nombre, domicilio, nif, email));
             try {
@@ -141,11 +146,18 @@ public class Datos {
 
     public ArrayList recorrerClienteP() {
         ArrayList<String> arrClientePremium = new ArrayList<>();
-        for (Cliente listaClientes1 : listaClientes.lista) {
+        /*for (Cliente listaClientes1 : listaClientes.lista) {
             if (listaClientes1 instanceof ClientePremium) {
                 arrClientePremium.add(listaClientes1.toString());
             }
 
+        }*/
+        try {
+            for(ClientePremium cp : DAOFactory.getDAOFactory().getClientePremiumDAO().obtenerTodos()){
+                arrClientePremium.add(cp.toString());
+            }
+        } catch (DAOException e) {
+            throw new RuntimeException(e);
         }
         return arrClientePremium;
     }
