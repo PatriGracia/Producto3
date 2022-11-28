@@ -3,6 +3,9 @@ package grupoTeamRocket.modelo;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 
+import grupoTeamRocket.dao.DAOException;
+import grupoTeamRocket.dao.DAOFactory;
+
 /*
 La clase Datos es la clase principal del paquete del modelo, puesto que
 contiene y gestiona todos los datos de la aplicación y es el enlace entre
@@ -47,14 +50,26 @@ public class Datos {
     }
 
 
-    public void aniadirArticulo(String id, String descripcion, float precio, float gastosEnvio, int tiempoPreparacion) {
+    public void aniadirArticulo(String id, String descripcion, float precio, float gastosEnvio, int tiempoPreparacion){
 
-        listaArticulos.add(new Articulo(id, descripcion, precio, gastosEnvio, tiempoPreparacion));
+        //listaArticulos.add(new Articulo(id, descripcion, precio, gastosEnvio, tiempoPreparacion));
+        try {
+            DAOFactory.getDAOFactory().getArticuloDAO().insertar(new Articulo(id, descripcion, precio, gastosEnvio, tiempoPreparacion));
+        } catch (DAOException e) {
+            throw new RuntimeException(e);
+        }
     }
     public ArrayList recorrerTodosArticulos(){
         ArrayList<String> arrArticulos = new ArrayList<>();
-        for(Articulo a : listaArticulos.lista){
+        /*for(Articulo a : listaArticulos.lista){
             arrArticulos.add(a.toString());
+        }*/
+        try {
+            for(Articulo a : DAOFactory.getDAOFactory().getArticuloDAO().obtenerTodos()){
+                arrArticulos.add(a.toString());
+            }
+        } catch (DAOException e) {
+            throw new RuntimeException(e);
         }
         return arrArticulos;
     }
@@ -63,6 +78,22 @@ public class Datos {
         if (descuento != null) {
             listaClientes.add(new ClientePremium(nombre, domicilio, nif, email, descuento));
         } else {
+            listaClientes.add(new Cliente(nombre, domicilio, nif, email) {
+                @Override
+                public float calcAnual() {
+                    return 0;
+                }
+
+                @Override
+                public String tipoCliente() {
+                    return null;
+                }
+
+                @Override
+                public float descuentoEnv() {
+                    return 0;
+                }
+            });
             listaClientes.add(new ClienteEstandar(nombre, domicilio, nif, email));
         }
 

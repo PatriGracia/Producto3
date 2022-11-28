@@ -1,5 +1,7 @@
 package grupoTeamRocket.controlador;
 
+
+import grupoTeamRocket.dao.DAOException;
 import grupoTeamRocket.modelo.Datos;
 
 import java.time.LocalDateTime;
@@ -28,8 +30,7 @@ public class Controlador {
 
 
     public void entradaArticulo(String id, String descripcion, float precio, float gastosEnvio, int tiempoPreparacion) {
-        datos.aniadirArticulo(id, descripcion, precio, gastosEnvio, tiempoPreparacion);
-
+            datos.aniadirArticulo(id, descripcion, precio, gastosEnvio, tiempoPreparacion);
     }
     public ArrayList recogerTodosArticulos(){
         ArrayList<String> arrArticulos = new ArrayList<>();

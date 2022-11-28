@@ -4,7 +4,7 @@ import java.sql.*;
 import java.sql.Connection;
 //..
 
-public class Conexion {
+public class Utilidad {
 
     protected Connection conexion;
     private final String url = "jdbc:mysql://teamrocketmysql.mysql.database.azure.com:3306/teamrocket";
@@ -12,9 +12,7 @@ public class Conexion {
     private final String password = "Pokemon1234";
     private final String driver = "com.mysql.cj.jdbc.Driver";
     Connection cx;
-    //ClientePremium c = new ClientePremium ("Paat", "Cuenca", "B3834", "paaat@", 20);
-    PreparedStatement ps = null;
-    public Conexion(){
+    public Utilidad(){
 
     }
 
@@ -39,8 +37,4 @@ public class Conexion {
         }
     }
 
-   /* public static void main(String[] args){
-        Conexion conexion = new Conexion();
-        conexion.conectar();
-    }*/
 }

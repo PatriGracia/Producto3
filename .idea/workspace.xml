@@ -2,15 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f412280e-4ab6-4e7f-b9c6-daac82f90431" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/grupoTeamRocket/dao/DAOException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/grupoTeamRocket/dao/ClienteDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/grupoTeamRocket/dao/DAOFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/grupoTeamRocket/dao/DAOFactoryImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/grupoTeamRocket/mysql/MySQLClienteDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/grupoTeamRocket/mysql/MySQLDAOFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/grupoTeamRocket/mysql/MySQLDAOManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Producto3.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Producto3.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/grupoTeamRocket/dao/Conexion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/grupoTeamRocket/dao/Conexion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/grupoTeamRocket/dao/DAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/grupoTeamRocket/dao/DAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/grupoTeamRocket/mysql/MySQLArticuloDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/grupoTeamRocket/dao/mysql/MySQLArticuloDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/grupoTeamRocket/mysql/MySQLClienteEstandarDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/grupoTeamRocket/dao/mysql/MySQLClienteEstandarDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/grupoTeamRocket/mysql/MySQLClientePremiumDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/grupoTeamRocket/dao/mysql/MySQLClientePremiumDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/grupoTeamRocket/mysql/MySQLPedidoDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/grupoTeamRocket/dao/mysql/MySQLPedidoDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/grupoTeamRocket/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/grupoTeamRocket/controlador/Controlador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/grupoTeamRocket/controlador/Controlador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/grupoTeamRocket/dao/ArticuloDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/grupoTeamRocket/dao/ArticuloDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/grupoTeamRocket/dao/Conexion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/grupoTeamRocket/dao/Utilidad.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/grupoTeamRocket/dao/PedidoDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/grupoTeamRocket/dao/PedidoDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/grupoTeamRocket/dao/mysql/MySQLArticuloDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/grupoTeamRocket/mysql/MySQLArticuloDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/grupoTeamRocket/dao/mysql/MySQLClienteEstandarDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/grupoTeamRocket/mysql/MySQLClienteEstandarDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/grupoTeamRocket/dao/mysql/MySQLClientePremiumDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/grupoTeamRocket/mysql/MySQLClientePremiumDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/grupoTeamRocket/dao/mysql/MySQLPedidoDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/grupoTeamRocket/mysql/MySQLPedidoDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/grupoTeamRocket/modelo/Datos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/grupoTeamRocket/modelo/Datos.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/grupoTeamRocket/vista/GestionOS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/grupoTeamRocket/vista/GestionOS.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/grupoTeamRocket/vista/OnlineStore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/grupoTeamRocket/vista/OnlineStore.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,17 +49,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "C:/Users/34639/Desktop/PATRI/DAW/Acceso_a_bbdd/jdbc_mysql/mysql-connector-j-8.0.31/mysql-connector-j-8.0.31.jar",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/34639/Desktop/PATRI/DAW/Acceso_a_bbdd/jdbc_mysql/mysql-connector-j-8.0.31/mysql-connector-j-8.0.31.jar&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -80,13 +90,21 @@
       <option name="project" value="LOCAL" />
       <updated>1669485789915</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Metodos para insertar articulos y mostrarlos desde MySQLArticuloDAO.">
+      <created>1669496451321</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1669496451321</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Primer commit. Código del PRODUCTO 2 + conexión a bbdd + estructura básica de diseño DAO" />
     <MESSAGE value="Código del PRODUCTO 2 + conexión a bbdd + estructura básica de diseño DAO" />
     <MESSAGE value="Estructuta implementación mysql" />
-    <option name="LAST_COMMIT_MESSAGE" value="Estructuta implementación mysql" />
+    <MESSAGE value="Metodos para insertar articulos y mostrarlos desde MySQLArticuloDAO." />
+    <option name="LAST_COMMIT_MESSAGE" value="Metodos para insertar articulos y mostrarlos desde MySQLArticuloDAO." />
   </component>
 </project>

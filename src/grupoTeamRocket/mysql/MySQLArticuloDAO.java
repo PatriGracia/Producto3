@@ -1,7 +1,6 @@
-package grupoTeamRocket.dao.mysql;
+package grupoTeamRocket.mysql;
 
 import grupoTeamRocket.dao.ArticuloDAO;
-import grupoTeamRocket.dao.Conexion;
 import grupoTeamRocket.dao.DAOException;
 import grupoTeamRocket.modelo.Articulo;
 
@@ -15,8 +14,12 @@ public class MySQLArticuloDAO implements ArticuloDAO {
     final String GETALL = "SELECT id_articulo, descripcion, precio, gastos_envio, tiempo_preparacion FROM articulo";
     private Connection conn;
 
-    public MySQLArticuloDAO(Connection conn){
+    /*public MySQLArticuloDAO(Connection conn){
         this.conn = conn;
+    }*/
+
+    public MySQLArticuloDAO() {
+
     }
 
     private Articulo convertir (ResultSet rs) throws SQLException{
@@ -33,6 +36,7 @@ public class MySQLArticuloDAO implements ArticuloDAO {
     public void insertar(Articulo a) throws DAOException{
         PreparedStatement stat = null;
         try {
+            conn = new MySQLDAOManager().conectar();
             stat = conn.prepareStatement(INSERT);
             stat.setString(1, a.getIdArticulo());
             stat.setString(2, a.getDescripcion());
@@ -52,6 +56,12 @@ public class MySQLArticuloDAO implements ArticuloDAO {
                 }
             }
 
+        }
+        try {
+            conn.close();
+            System.out.println("Se ha desconectado de la bbdd");
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
         }
     }
 
@@ -101,7 +111,7 @@ public class MySQLArticuloDAO implements ArticuloDAO {
     public Articulo obtener(Long id) throws DAOException {
         return null;
     }
-    public static void main(String[] args) throws DAOException, SQLException {
+    /*public static void main(String[] args) throws DAOException, SQLException {
         Connection conn = null;
         final String driver = "com.mysql.cj.jdbc.Driver";
         try {
@@ -121,5 +131,5 @@ public class MySQLArticuloDAO implements ArticuloDAO {
                 conn.close();
             }
         }
-    }
+    }*/
 }

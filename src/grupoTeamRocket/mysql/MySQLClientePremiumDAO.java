@@ -1,11 +1,22 @@
-package grupoTeamRocket.dao.mysql;
+package grupoTeamRocket.mysql;
 
 import grupoTeamRocket.dao.ClientePremiumDAO;
 import grupoTeamRocket.modelo.ClientePremium;
 
+import java.sql.Connection;
 import java.util.List;
 
 public class MySQLClientePremiumDAO implements ClientePremiumDAO {
+
+    private Connection conn;
+    public MySQLClientePremiumDAO(Connection conn) {
+        this.conn = conn;
+    }
+
+    public MySQLClientePremiumDAO() {
+
+    }
+
     @Override
     public void insertar(ClientePremium a) {
 

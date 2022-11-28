@@ -15,7 +15,7 @@ public class GestionOS {
     public GestionOS() {
         controlador = new Controlador();
     }
-    public void inicio() {
+    public void inicio(){
         boolean salir = false;
         char opcio;
         do {
