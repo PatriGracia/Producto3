@@ -75,7 +75,7 @@ public class Datos {
     }
 
     public void aniadirCliente(String nombre, String domicilio, String nif, String email, Float descuento) {
-        if (descuento != null) {
+        /*if (descuento != null) {
             listaClientes.add(new ClientePremium(nombre, domicilio, nif, email, descuento));
         } else {
             listaClientes.add(new Cliente(nombre, domicilio, nif, email) {
@@ -95,14 +95,40 @@ public class Datos {
                 }
             });
             listaClientes.add(new ClienteEstandar(nombre, domicilio, nif, email));
-        }
+        }*/
+        try {
+            DAOFactory.getDAOFactory().getClienteDAO().insertar(new Cliente(nombre, domicilio, nif, email) {
+                @Override
+                public float calcAnual() {
+                    return 0;
+                }
 
+                @Override
+                public String tipoCliente() {
+                    return null;
+                }
+
+                @Override
+                public float descuentoEnv() {
+                    return 0;
+                }
+            });
+        } catch (DAOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     public ArrayList recorrerTodosClientes(){
         ArrayList<String> arrClientes = new ArrayList<>();
-        for(Cliente listaClientes1 : listaClientes.lista){
+        /*for(Cliente listaClientes1 : listaClientes.lista){
             arrClientes.add(listaClientes1.toString());
+        }*/
+        try {
+            for(Cliente c : DAOFactory.getDAOFactory().getClienteDAO().obtenerTodos()){
+                arrClientes.add(c.toString());
+            }
+        } catch (DAOException e) {
+            throw new RuntimeException(e);
         }
         return arrClientes;
     }
