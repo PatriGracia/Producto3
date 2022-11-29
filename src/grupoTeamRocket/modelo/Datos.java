@@ -186,7 +186,7 @@ public class Datos {
 
         try {
             if((DAOFactory.getDAOFactory().getPedidoDAO().obtener(numPedido).getFecha().plusMinutes
-                    (DAOFactory.getDAOFactory().getPedidoDAO().obtener(numPedido).getArticulo().getTiempoPreparacion()).isBefore(hoy))){
+                    (DAOFactory.getDAOFactory().getArticuloDAO().obtener(dameArticulo(numPedido)).getTiempoPreparacion()).isBefore(hoy))){
                 return true;
             }
         } catch (DAOException e) {
@@ -231,6 +231,16 @@ public class Datos {
             }
         }
         return filtro;
+    }
+    public String dameArticulo (Integer id){
+        String id_articulo = null;
+        try {
+            id_articulo = DAOFactory.getDAOFactory().getPedidoDAO().obtenerArticulo(id);
+        } catch (DAOException e) {
+            throw new RuntimeException(e);
+        }
+
+        return id_articulo;
     }
 }
 

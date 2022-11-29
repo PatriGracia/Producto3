@@ -83,6 +83,7 @@ public class MySQLPedidoDAO implements PedidoDAO {
     @Override
     public void eliminar(Pedido p) throws DAOException{
         PreparedStatement stat = null;
+        conn = new MySQLDAOManager().conectar();
         try{
             stat = conn.prepareStatement(DELETE);
             stat.setInt(1, p.getNumPedido());
@@ -158,7 +159,6 @@ public class MySQLPedidoDAO implements PedidoDAO {
         conn = new MySQLDAOManager().conectar();
         PreparedStatement stat = null;
         ResultSet rs = null;
-        Pedido p = null;
         String a  = null;
         try{
             stat = conn.prepareStatement(SELECT_ARTICULO);
@@ -166,8 +166,7 @@ public class MySQLPedidoDAO implements PedidoDAO {
             rs = stat.executeQuery();
             System.out.println("Hace la query");
             if(rs.next()){
-                p = convertir(rs);
-                a =
+                a = rs.getString("fk_articulo");
             } else {
                 throw new DAOException("No se ha encontrado ese registro.");
             }

@@ -3,15 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="f412280e-4ab6-4e7f-b9c6-daac82f90431" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/grupoTeamRocket/controlador/Controlador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/grupoTeamRocket/controlador/Controlador.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/grupoTeamRocket/dao/ArticuloDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/grupoTeamRocket/dao/ArticuloDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/grupoTeamRocket/dao/ClienteDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/grupoTeamRocket/dao/ClienteDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/grupoTeamRocket/dao/PedidoDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/grupoTeamRocket/dao/PedidoDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/grupoTeamRocket/modelo/Datos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/grupoTeamRocket/modelo/Datos.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/grupoTeamRocket/mysql/MySQLArticuloDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/grupoTeamRocket/mysql/MySQLArticuloDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/grupoTeamRocket/mysql/MySQLClienteDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/grupoTeamRocket/mysql/MySQLClienteDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/grupoTeamRocket/mysql/MySQLPedidoDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/grupoTeamRocket/mysql/MySQLPedidoDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/grupoTeamRocket/vista/GestionOS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/grupoTeamRocket/vista/GestionOS.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -116,7 +110,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669663170404</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Faltan métodos eliminar hacia abajo de Pedido.">
+      <created>1669755084842</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1669755084842</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -128,7 +129,8 @@
     <MESSAGE value="Métodos de cliente hechos." />
     <MESSAGE value="Métodos de cliente estándar hechos." />
     <MESSAGE value="Métodos de cliente premium hechos." />
-    <option name="LAST_COMMIT_MESSAGE" value="Métodos de cliente premium hechos." />
+    <MESSAGE value="Faltan métodos eliminar hacia abajo de Pedido." />
+    <option name="LAST_COMMIT_MESSAGE" value="Faltan métodos eliminar hacia abajo de Pedido." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
