@@ -68,9 +68,6 @@ public class Controlador {
         return existe;
     }
 
-    public void addClientePedido(){
-        datos.aniadirClientePedido();
-    };
 
     public void eliminarPedido(int numPedido){
         datos.borrarPedido(numPedido);
@@ -95,6 +92,12 @@ public class Controlador {
         ArrayList<String> arrFiltroCliente = new ArrayList<>();
         arrFiltroCliente = datos.filtroEnviado(email);
         return arrFiltroCliente;
+    }
+    public boolean existeC(String email){
+        if(datos.existeCliente(email)){
+            return true;
+        }
+        return false;
     }
 }
 

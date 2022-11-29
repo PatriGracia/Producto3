@@ -17,6 +17,7 @@ public class MySQLClienteDAO implements ClienteDAO {
 
     final String INSERT = "INSERT INTO cliente (email, domicilio, nif, nombre) VALUES (?,?,?,?);";
     final String GETALL = "SELECT email, domicilio, nif, nombre FROM cliente";
+    final String GETONE = "SELECT email, domicilio, nif, nombre FROM cliente WHERE email = ?";
     private Connection conn;
 
     private Cliente convertir (ResultSet rs) throws SQLException{
@@ -124,7 +125,40 @@ public class MySQLClienteDAO implements ClienteDAO {
     }
 
     @Override
-    public Cliente obtener(Long id) throws DAOException {
-        return null;
+    public Cliente obtener(String id) throws DAOException {
+        conn = new MySQLDAOManager().conectar();
+        PreparedStatement stat = null;
+        ResultSet rs = null;
+        Cliente c = null;
+        try{
+            stat = conn.prepareStatement(GETONE);
+            stat.setString(1, id);
+            rs = stat.executeQuery();
+            System.out.println("Hace la query");
+            if(rs.next()){
+                c = convertir(rs);
+            } else {
+                throw new DAOException("No se ha encontrado ese registro.");
+            }
+
+        }catch (SQLException ex){
+            throw new DAOException("Error en SQL", ex);
+        }finally {
+            if(rs != null){
+                try{
+                    rs.close();
+                }catch (SQLException ex){
+                    new DAOException("Error en SQL", ex);
+                }
+            }
+            if(stat != null){
+                try{
+                    stat.close();
+                }catch (SQLException ex){
+                    new DAOException("Error en SQL", ex);
+                }
+            }
+        }
+        return c;
     }
 }

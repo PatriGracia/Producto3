@@ -232,12 +232,11 @@ public class GestionOS {
         String email = teclado.nextLine();
         System.out.println("Id de Articulo: ");
         String id = teclado.nextLine();
-        boolean existe = controlador.entradaPedido(numPedido, cantidad, fecha, email, id);
-
-        if(!existe){
+        if(!controlador.existeC(email)){
             addCliente();
-            controlador.addClientePedido();
         }
+        controlador.entradaPedido(numPedido, cantidad, fecha, email, id);
+
         System.out.println("Se ha añadido el nuevo Pedido");
     }
 

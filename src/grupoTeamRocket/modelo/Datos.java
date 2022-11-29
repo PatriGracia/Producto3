@@ -115,9 +115,6 @@ public class Datos {
 
     public ArrayList recorrerTodosClientes(){
         ArrayList<String> arrClientes = new ArrayList<>();
-        /*for(Cliente listaClientes1 : listaClientes.lista){
-            arrClientes.add(listaClientes1.toString());
-        }*/
         try {
             for(Cliente c : DAOFactory.getDAOFactory().getClienteDAO().obtenerTodos()){
                 arrClientes.add(c.toString());
@@ -129,11 +126,6 @@ public class Datos {
     }
     public ArrayList recorrerClienteE() {
         ArrayList<String> arrClienteEstandar = new ArrayList<>();
-        /*for (Cliente listaClientes1 : listaClientes.lista) {
-            if (listaClientes1 instanceof ClienteEstandar) {
-                arrClienteEstandar.add(listaClientes1.toString());
-            }
-        }*/
         try {
             for(ClienteEstandar ce : DAOFactory.getDAOFactory().getClienteEstandarDAO().obtenerTodos()){
                 arrClienteEstandar.add(ce.toString());
@@ -146,12 +138,6 @@ public class Datos {
 
     public ArrayList recorrerClienteP() {
         ArrayList<String> arrClientePremium = new ArrayList<>();
-        /*for (Cliente listaClientes1 : listaClientes.lista) {
-            if (listaClientes1 instanceof ClientePremium) {
-                arrClientePremium.add(listaClientes1.toString());
-            }
-
-        }*/
         try {
             for(ClientePremium cp : DAOFactory.getDAOFactory().getClientePremiumDAO().obtenerTodos()){
                 arrClientePremium.add(cp.toString());
@@ -163,72 +149,51 @@ public class Datos {
     }
 
     public boolean aniadirPedido(int numPedido, int cantidad, LocalDateTime fecha, String email, String id) {
-        int contenido = -1;
-        if (existeCliente(email)) {
-            contenido = dameCliente(email);
-            listaPedidos.add(new Pedido(numPedido, cantidad, fecha, getListaClientes().getAt(contenido), dameArticulo(id)));
+            try {
+                DAOFactory.getDAOFactory().getPedidoDAO().insertar(new Pedido(numPedido, cantidad, fecha,
+                        DAOFactory.getDAOFactory().getClienteDAO().obtener(email), DAOFactory.getDAOFactory().getArticuloDAO().obtener(id)));
+            } catch (DAOException e) {
+                throw new RuntimeException(e);
+            }
             return true;
-        }
+    }
 
-        if(!existeCliente(email)){
-            listaPedidos.add(new Pedido(numPedido, cantidad, fecha, dameArticulo(id)));
-            return false;
+
+    public boolean existeCliente(String email) {
+        try {
+            if(email.equals(DAOFactory.getDAOFactory().getClienteDAO().obtener(email).getEmail())){
+                    return true;
+            }
+        } catch (DAOException e) {
+            //throw new RuntimeException(e);
         }
         return false;
     }
 
-
-    public Articulo dameArticulo(String id){
-        Articulo articulo = new Articulo();
-        for(Articulo art : listaArticulos.lista){
-            if(id.equals(art.getIdArticulo())){
-                articulo = art;
-            }
-        }
-        return articulo;
-    }
-
-    boolean existeCliente(String email) {
-        for (Cliente cli : listaClientes.lista) {
-            if (cli.getEmail().equals(email)) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    public int dameCliente(String email){
-        int contenido = 0;
-        for(Cliente cli : listaClientes.lista){
-            if(email.equals(cli.getEmail())){
-                return contenido;
-            }
-            contenido++;
-        }
-        return contenido;
-    }
-
-    public void aniadirClientePedido(){
-        int lastIC = listaClientes.lista.size() -1;
-        int lastIP = listaPedidos.lista.size()- 1;
-        int numPedido = listaPedidos.getAt(lastIP).getNumPedido();
-        int cantidad = listaPedidos.getAt(lastIP).getCantidad();
-        LocalDateTime fecha = listaPedidos.getAt(lastIP).getFecha();
-        Articulo a = listaPedidos.getAt(lastIP).getArticulo();
-        listaPedidos.borrar(listaPedidos.getAt(lastIP));
-        listaPedidos.add(new Pedido(numPedido, cantidad, fecha, listaClientes.getAt(lastIC), a));
-
-    }
 
     public void borrarPedido(int numPedido){
-        for(Pedido p : listaPedidos.lista){
-            if(numPedido == p.getNumPedido() && p.pedidoEnviado() == true){
-                listaPedidos.borrar(p);
-                break;
+        try {
+            if(numPedido == DAOFactory.getDAOFactory().getPedidoDAO().obtener(numPedido).getNumPedido() && pedidoEnv(numPedido) == true){
+                Pedido p = DAOFactory.getDAOFactory().getPedidoDAO().obtener(numPedido);
+                DAOFactory.getDAOFactory().getPedidoDAO().eliminar(p);
             }
+        } catch (DAOException e) {
+            throw new RuntimeException(e);
         }
     }
+    public boolean pedidoEnv(int numPedido){
+        LocalDateTime hoy = LocalDateTime.now();
 
+        try {
+            if((DAOFactory.getDAOFactory().getPedidoDAO().obtener(numPedido).getFecha().plusMinutes
+                    (DAOFactory.getDAOFactory().getPedidoDAO().obtener(numPedido).getArticulo().getTiempoPreparacion()).isBefore(hoy))){
+                return true;
+            }
+        } catch (DAOException e) {
+            throw new RuntimeException(e);
+        }
+        return false;
+    }
     public ArrayList<String> pendientes(){
         ArrayList<String> arrPedido = new ArrayList<>();
         for(Pedido p : listaPedidos.lista){
